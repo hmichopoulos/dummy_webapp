@@ -3,10 +3,10 @@ A simple webapp that uses a dummy postgres database. The database link is called
 
 ## Quick start
 Start the postgres dummy database.
-> docker run -p 5432:5432 --name dummy-db -e POSTGRES_PASSWORD=postgres -d hmichopoulos/dummy-db
+> docker run -p 5432:5432 --name dummy_db -e POSTGRES_PASSWORD=postgres -d hmichopoulos/dummy-db
 
 Then start the webapp
-> docker run -p 8080:8080 --link dummy_db:postgres -d hmichopoulos/dummy_webapp
+> docker run -p 8080:8080 --link dummy_db:postgres -d hmichopoulos/dummy-webapp
 
 Access the application at [http://localhost:8080/](http://localhost:8080/)
 
