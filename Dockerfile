@@ -1,6 +1,6 @@
 FROM java:7
-MAINTAINER Haris Michopoulos <haris.michopoulos@nexusgroup.com>
-COPY dummy-0.0.1-SNAPSHOT.jar /opt/
-WORKDIR /opt
-CMD ["java", "-jar", "dummy-0.0.1-SNAPSHOT.jar"]
+VOLUME /tmp
+ADD dummy-webapp-0.0.1-SNAPSHOT.jar app.jar
+RUN bash -c 'touch /app.jar'
+ENTRYPOINT ["java","-Djava.security.egd=file:/dev/./urandom","-jar","/app.jar"]
 
